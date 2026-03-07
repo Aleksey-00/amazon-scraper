@@ -1,0 +1,27 @@
+model Product {
+  id           String   @id @default(uuid())
+  asin         String   @unique
+  title        String
+  description  String?  @db.Text
+  price        Decimal? @db.Decimal(10, 2)
+  currency     String   @default("USD")
+  rating       Float?
+  reviewsCount Int      @default(0)
+  url          String
+
+  categoryId   String
+  category     Category @relation(fields: [categoryId], references: [id])
+
+  sellerId     String?
+  seller       Seller?  @relation(fields: [sellerId], references: [id])
+
+  reviews      Review[]
+
+  lastParsedAt DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([asin])
+  @@index([categoryId])
+  @@index([sellerId])
+}

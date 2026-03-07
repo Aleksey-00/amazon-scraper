@@ -1,0 +1,16 @@
+enum LogStatus {
+  SUCCESS
+  FAILED
+  IN_PROGRESS
+}
+
+model ParsingLog {
+  id            String    @id @default(uuid())
+  entityType    String
+  entityId      String
+  status        LogStatus
+  errorMessage  String?   @db.Text
+  durationMs    Int?
+
+  createdAt     DateTime  @default(now())
+}

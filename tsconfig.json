@@ -20,6 +20,11 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "rootDirs": ["src", "prisma/generated/prisma"],
+    "paths": {
+      "@prisma/client": ["./prisma/generated/prisma"]
+    },
+    "include": ["src/**/*", "prisma/generated/prisma/**/*"]
   }
 }

@@ -1,0 +1,19 @@
+model Review {
+  id          String   @id @default(uuid())
+  externalId  String   @unique
+
+  rating      Int
+  title       String?
+  text        String   @db.Text
+  authorName  String?
+  isVerified  Boolean  @default(false)
+  date        DateTime
+
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+
+  @@index([productId])
+  @@index([date])
+}

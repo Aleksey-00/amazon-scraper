@@ -1,0 +1,11 @@
+model Seller {
+  id         String    @id @default(uuid())
+  externalId String    @unique
+  name       String
+  url        String?
+  rating     Float?
+
+  products   Product[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
