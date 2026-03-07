@@ -5,6 +5,14 @@
 
 ---
 
+### Как развернуть данное приложение:
+git clone git@github.com:Aleksey-00/amazon-scraper.git
+
+docker compose up -d
+
+yarn prisma migrate dev
+
+---
 ## 🏗 1. Архитектура базы данных (ER-диаграмма)
 
 Для обеспечения целостности данных и скорости выборок выбрана реляционная модель в PostgreSQL.
