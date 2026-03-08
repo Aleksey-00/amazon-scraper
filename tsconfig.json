@@ -24,7 +24,7 @@
     "rootDirs": ["src", "prisma/generated/prisma"],
     "paths": {
       "@prisma/client": ["./prisma/generated/prisma"]
-    },
-    "include": ["src/**/*", "prisma/generated/prisma/**/*"]
-  }
+    }
+  },
+  "include": ["src/**/*", "prisma/generated/prisma/**/*"]
 }

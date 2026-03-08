@@ -16,4 +16,5 @@ model Review {
 
   @@index([productId])
   @@index([date])
+  @@index([productId, date])
 }

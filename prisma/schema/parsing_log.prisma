@@ -13,4 +13,7 @@ model ParsingLog {
   durationMs    Int?
 
   createdAt     DateTime  @default(now())
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
 }
